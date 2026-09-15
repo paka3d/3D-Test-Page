@@ -56,39 +56,39 @@ header{position:fixed;top:0;left:0;right:0;z-index:40;display:flex;justify-conte
 .credit-sub{font-family:'Chakra Petch';font-size:10.5px;letter-spacing:.1em;color:var(--dim);margin-top:4px;text-transform:uppercase}
 .credit-sub .dot{display:inline-block;width:6px;height:6px;background:var(--green);border-radius:1px;margin-right:7px;box-shadow:0 0 8px var(--green);animation:blinkDot 2.2s infinite}
 
-/* ============ HUD PANELS (compact, non-blocking) ============ */
-.hud-panel{position:fixed;z-index:20;display:flex;flex-direction:column;gap:11px;width:clamp(148px,13.5vw,180px);top:96px;pointer-events:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1)}
-#leftPanel{left:18px} #rightPanel{right:18px;align-items:stretch}
+/* ============ HUD PANELS (compact + non-blocking) ============ */
+.hud-panel{position:fixed;z-index:20;display:flex;flex-direction:column;gap:9px;width:clamp(96px,15vw,170px);top:94px;pointer-events:none;transition:opacity .5s ease,transform .5s cubic-bezier(.2,.9,.3,1)}
+#leftPanel{left:16px} #rightPanel{right:16px;align-items:stretch}
 body[data-state="title"] .hud-panel{opacity:0}
-body[data-state="title"] #leftPanel{transform:translateX(-26px)}
-body[data-state="title"] #rightPanel{transform:translateX(26px)}
+body[data-state="title"] #leftPanel{transform:translateX(-24px)}
+body[data-state="title"] #rightPanel{transform:translateX(24px)}
 
-.panel{position:relative;padding:11px 12px;border:1px solid var(--line);
-  background:linear-gradient(160deg, rgba(13,19,40,.78), rgba(13,19,40,.32));backdrop-filter:blur(5px)}
-.panel::before,.panel::after{content:'';position:absolute;width:14px;height:14px}
+.panel{position:relative;padding:10px 11px;border:1px solid var(--line);
+  background:linear-gradient(160deg, rgba(13,19,40,.8), rgba(13,19,40,.32));backdrop-filter:blur(5px)}
+.panel::before,.panel::after{content:'';position:absolute;width:13px;height:13px}
 .panel::before{top:-1px;left:-1px;border-top:2px solid var(--acc);border-left:2px solid var(--acc)}
 .panel::after{bottom:-1px;right:-1px;border-bottom:2px solid var(--acc);border-right:2px solid var(--acc)}
-.panel h3{font-family:'Chakra Petch';font-size:9.5px;font-weight:700;letter-spacing:.26em;text-transform:uppercase;color:#9db4de;margin-bottom:7px;display:flex;justify-content:space-between;align-items:center}
-.panel h3::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--acc),transparent);margin-left:8px;opacity:.55}
-#leftPanel .panel{--acc:var(--cyan)} #holdPanel{--acc:var(--orange)} #nextPanel{--acc:var(--magenta)} #keysPanel{--acc:#4a5b8c;padding-bottom:10px}
+.panel h3{font-family:'Chakra Petch';font-size:9px;font-weight:700;letter-spacing:.24em;text-transform:uppercase;color:#9db4de;margin-bottom:6px;display:flex;justify-content:space-between;align-items:center}
+.panel h3::after{content:'';flex:1;height:1px;background:linear-gradient(90deg,var(--acc),transparent);margin-left:7px;opacity:.55}
+#leftPanel .panel{--acc:var(--cyan)} #holdPanel{--acc:var(--orange)} #nextPanel{--acc:var(--magenta)} #keysPanel{--acc:#4a5b8c;padding-bottom:9px}
 
-.vp{position:relative;width:clamp(56px,6vw,78px);aspect-ratio:1/1;margin:2px auto 4px}
+.vp{position:relative;width:clamp(52px,6vw,78px);aspect-ratio:1/1;margin:2px auto 3px}
 .vp .veil{position:absolute;inset:0;background:rgba(5,8,18,.74);opacity:0;transition:opacity .2s;pointer-events:none;z-index:1}
 .hold-used .veil{opacity:1}
 
-.stat{margin-bottom:9px}
-.stat label{font-family:'Chakra Petch';font-size:9px;font-weight:600;letter-spacing:.28em;text-transform:uppercase;color:#7e94c2;display:block;margin-bottom:2px}
-.chip{display:inline-block;padding:3px 9px;background:rgba(8,12,26,.6);border-left:3px solid var(--acc)}
-.stat b{font-family:'Chakra Petch';font-weight:700;font-size:clamp(18px,1.7vw,23px);letter-spacing:.04em;color:#fff;display:inline-block;text-shadow:0 0 16px color-mix(in srgb,var(--acc) 55%, transparent)}
+.stat{margin-bottom:8px}
+.stat label{font-family:'Chakra Petch';font-size:8.5px;font-weight:600;letter-spacing:.26em;text-transform:uppercase;color:#7e94c2;display:block;margin-bottom:2px}
+.chip{display:inline-block;padding:3px 8px;background:rgba(8,12,26,.6);border-left:3px solid var(--acc)}
+.stat b{font-family:'Chakra Petch';font-weight:700;font-size:clamp(16px,1.5vw,20px);letter-spacing:.04em;color:#fff;display:inline-block;text-shadow:0 0 14px color-mix(in srgb,var(--acc) 55%, transparent)}
 .stat b.bump{animation:bump .3s ease}
-.row2{display:flex;gap:9px;margin-top:4px}
+.row2{display:flex;gap:8px;margin-top:3px}
 .row2>.stat{flex:1;margin-bottom:0}
-.speedbar{height:5px;background:#182242;margin-top:6px;overflow:hidden;border-radius:2px}
-.speedbar i{display:block;height:100%;width:8%;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width .4s ease;box-shadow:0 0 10px var(--cyan)}
+.speedbar{height:4px;background:#182242;margin-top:6px;overflow:hidden;border-radius:2px}
+.speedbar i{display:block;height:100%;width:8%;background:linear-gradient(90deg,var(--cyan),var(--magenta));transition:width .4s ease;box-shadow:0 0 9px var(--cyan)}
 
-.keys-legend{font-family:'Chakra Petch';font-size:10px;color:#a8bce3;display:flex;flex-direction:column;gap:6px;letter-spacing:.05em}
-.krow{display:flex;justify-content:space-between;align-items:center;gap:7px}
-.k{display:inline-block;padding:2px 6px;border:1px solid #3a4a78;border-bottom-width:2px;background:#131b35;color:#cdd9f5;font-family:'Chakra Petch';font-weight:600;font-size:9.5px;border-radius:4px;letter-spacing:.05em}
+.keys-legend{font-family:'Chakra Petch';font-size:9.5px;color:#a8bce3;display:flex;flex-direction:column;gap:5px;letter-spacing:.05em}
+.krow{display:flex;justify-content:space-between;align-items:center;gap:6px}
+.k{display:inline-block;padding:1px 6px;border:1px solid #3a4a78;border-bottom-width:2px;background:#131b35;color:#cdd9f5;font-family:'Chakra Petch';font-weight:600;font-size:9px;border-radius:4px;letter-spacing:.05em}
 
 /* ============ FOOTER ============ */
 footer{position:fixed;left:0;right:0;bottom:0;z-index:20;display:flex;justify-content:space-between;align-items:center;padding:10px 24px;font-family:'Chakra Petch';font-size:10.5px;letter-spacing:.18em;text-transform:uppercase;color:#67799f}
@@ -138,8 +138,8 @@ body[data-state="pause"] .popup{animation-play-state:paused!important}
 @keyframes logoSpin{0%,100%{transform:rotate(-4deg)}50%{transform:rotate(-16deg) translateY(-2px)}}
 
 @media (max-width:980px){ #keysPanel,.credits .credit-sub,footer .tags{display:none} }
-@media (max-width:720px){ .hud-panel{width:134px;top:86px;gap:10px} header{padding:12px 16px}.credit-main{font-size:9.5px} }
-@media (max-width:560px){ .vp{width:clamp(48px,13vw,64px)} .stat b{font-size:17px} }
+@media (max-width:720px){ .hud-panel{width:clamp(92px,24vw,150px);top:88px;gap:8px} header{padding:12px 16px}.credit-main{font-size:9.5px} }
+@media (max-width:480px){ .hud-panel{width:clamp(74px,26vw,120px);top:82px;gap:7px;left:10px;right:10px} #leftPanel{left:10px} #rightPanel{right:10px} .vp{width:clamp(46px,15vw,62px)} }
 @media (prefers-reduced-motion:reduce){ *{animation-duration:.01ms!important;animation-iteration-count:1!important;transition:none!important} }
 </style>
 </head>
@@ -196,7 +196,7 @@ body[data-state="pause"] .popup{animation-play-state:paused!important}
       <div class="krow"><span><span class="k">▲</span>/<span class="k">X</span></span><span>Rotate ⟳</span></div>
       <div class="krow"><span><span class="k">Z</span></span><span>Rotate ⟲</span></div>
       <div class="krow"><span><span class="k">▼</span></span><span>Soft Drop</span></div>
-      <div class="krow"><span><span class="k" style="padding:2px 14px">SPACE</span></span><span>Hard Drop</span></div>
+      <div class="krow"><span><span class="k" style="padding:1px 14px">SPACE</span></span><span>Hard Drop</span></div>
       <div class="krow"><span><span class="k">C</span> · <span class="k">P</span></span><span>Hold · Pause</span></div>
     </div>
   </section>
@@ -295,7 +295,7 @@ renderer.setClearColor(0x000000,0);
 const scene=new THREE.Scene();
 scene.fog=new THREE.FogExp2(0x0a0e1e,0.012);
 const camera=new THREE.PerspectiveCamera(45,innerWidth/innerHeight,.1,300);
-let camDist=26,camBaseY=1.7;
+let camDist=26,camBaseY=1.6;
 
 scene.add(new THREE.HemisphereLight(0x9fc4ff,0x1b1233,.85));
 const dirL=new THREE.DirectionalLight(0xffffff,.85);dirL.position.set(7,14,9);scene.add(dirL);
@@ -330,12 +330,11 @@ function getGhostMat(hex){return ghostMatCache[hex]||(ghostMatCache[hex]=new THR
 function makeBlock(hex){const m=new THREE.Mesh(blockGeo,getMats(hex));m.add(new THREE.LineSegments(edgeGeo,lineMat(hex)));return m}
 
 /* ---------------- board build ---------------- */
-const worldX=x=>x-(COLS-1)/2, worldY=y=>y-(VIS-1)/2;
+const worldX=x=>x-(COLS-1)/2, worldY=y=>y-(VIS-1)/2;   // rows 0..19 visible; 20..21 hidden above the lid
 const boardGroup=new THREE.Group();scene.add(boardGroup);
 let stripMats=[],haloMesh=null;
 
 (function buildBoard(){
-  // back grid panel (canvas texture)
   const cv=document.createElement('canvas');cv.width=256;cv.height=512;const g=cv.getContext('2d');
   const gr=g.createLinearGradient(0,0,0,512);gr.addColorStop(0,'#111a3c');gr.addColorStop(1,'#0a0f24');g.fillStyle=gr;g.fillRect(0,0,256,512);
   g.strokeStyle='rgba(120,170,255,.12)';g.lineWidth=1;
@@ -345,22 +344,19 @@ let stripMats=[],haloMesh=null;
   const tex=new THREE.CanvasTexture(cv);if(THREE.sRGBEncoding!==undefined)tex.encoding=THREE.sRGBEncoding;
   boardGroup.add(new THREE.Mesh(new THREE.PlaneGeometry(10.9,20.9),new THREE.MeshBasicMaterial({map:tex})).translateZ(-.48));
 
-  // frame rails
   const fm=new THREE.MeshStandardMaterial({color:0x2b3556,metalness:.8,roughness:.32});
   const rail=(w,h,d,x,y,z)=>{const m=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),fm);m.position.set(x,y,z);boardGroup.add(m)};
-  rail(.4,21.8,.5,-5.2,0,.1);rail(.4,21.8,.5,5.2,0,.1);
-  rail(10.9,.4,.5,0,-10.35,.1);
-  rail(11.2,1.0,.7,0,10.6,.15);           // top rail (occludes spawn rows)
-  rail(10.6,.28,.55,0,10.12,.34);         // inner lip
+  rail(.4,21.8,.5,-5.2,0,.1);rail(.4,21.8,.5,5.2,0,.1);      // side rails
+  rail(10.9,.4,.5,0,-10.35,.1);                              // bottom
+  rail(11.3,2.05,.8,0,11.0,.5);                              // top CEILING — tall enough to hide hidden rows 20-21
+  rail(10.6,.24,.5,0,9.97,.42);                              // ceiling lower lip (sits just above the visible playfield)
 
-  // neon strips
   const stripMat=c=>new THREE.MeshBasicMaterial({color:c,transparent:true,opacity:.7});
   stripMats=[stripMat(0x46e8ff),stripMat(0x5b7cff),stripMat(0x5b7cff)];
   const s0=new THREE.Mesh(new THREE.BoxGeometry(10.3,.07,.05),stripMats[0]);s0.position.set(0,-10.05,.36);boardGroup.add(s0);
   const s1=new THREE.Mesh(new THREE.BoxGeometry(.07,20.4,.05),stripMats[1]);s1.position.set(-4.92,0,.36);boardGroup.add(s1);
   const s2=new THREE.Mesh(new THREE.BoxGeometry(.07,20.4,.05),stripMats[2]);s2.position.set(4.92,0,.36);boardGroup.add(s2);
 
-  // halo behind board
   const hm=new THREE.MeshBasicMaterial({color:0x2b6bff,transparent:true,opacity:.12,blending:THREE.AdditiveBlending,depthWrite:false});
   haloMesh=new THREE.Mesh(new THREE.CircleGeometry(8.5,48),hm);haloMesh.position.set(0,-.3,-2.4);scene.add(haloMesh);
 })();
@@ -595,8 +591,7 @@ function startGame(){
 }
 function gameOver(reason){
   state='over';overT=0;SFX.over();addShake(.4);
-  // hide the offending piece so only the topped-out stack is visible behind the overlay
-  pieceGroup.children.forEach(m=>m.visible=false);
+  pieceGroup.children.forEach(m=>m.visible=false);               // hide offending piece, show the topped-out stack
   ghostGroup.children.forEach(m=>m.visible=false);
   piece=null;
   if(reason==='topout'){fxPulse=1;addShake(.55);
@@ -642,12 +637,12 @@ window.addEventListener('blur',()=>{if((state==='play'||state==='clear')&&!pause
 
 /* ---------------- input: pointer (touch + mouse, unified) ----------------
    press / drag left-right -> move by column
-   swipe up                -> rotate CW
+   swipe up                -> rotate CW  (incremental deltas; one swipe = one turn)
    double-tap              -> hard drop
    The piece descends at normal level gravity the whole time — touch does NOT
    accelerate it, so steering feels controlled.                          */
 const TAP_MS=300, SWIPE_Y=70;
-let ptrId=null,ptrDown=false,ptrStartX=0,ptrStartY=0,ptrAnchorX=0,downTime=0,movedDist=0,rotAccum=0,lastTap=0,stepPx=48;
+let ptrId=null,ptrDown=false,prevX=0,prevY=0,hAccum=0,upAccum=0,movedDist=0,lastTap=0,downTime=0,stepPx=48;
 
 const inGamePress=e=> state==='play' && !paused && !(e.target&&e.target.closest&&e.target.closest('button'));
 
@@ -656,45 +651,51 @@ window.addEventListener('pointerdown',e=>{
   if(state==='title'){startGame();return}                          // tap / click to start
   if(state==='over'&&overT>.5){startGame();return}                 // tap / click to restart
   if(!inGamePress(e)||ptrDown)return;                              // ignore buttons + second finger
-  ptrId=e.pointerId;ptrDown=true;movedDist=0;rotAccum=0;downTime=performance.now();
-  ptrStartX=ptrAnchorX=e.clientX;ptrStartY=e.clientY;
-  stepPx=Math.max(30,Math.min(64,innerWidth*0.05));                // px per column step
+  ptrId=e.pointerId;ptrDown=true;
+  prevX=e.clientX;prevY=e.clientY;hAccum=0;upAccum=0;movedDist=0;downTime=performance.now();
+  stepPx=Math.max(34,Math.min(72,innerWidth*0.05));                // px per column step
 },{passive:true});
 
 window.addEventListener('pointermove',e=>{
   if(!ptrDown||e.pointerId!==ptrId)return;
   const canAct=state==='play'&&!paused&&piece;
-  let dx=e.clientX-ptrAnchorX;                                     // horizontal drag -> step by column
-  while(dx>stepPx){if(canAct&&tryMove(1))SFX.move();ptrAnchorX+=stepPx;dx=e.clientX-ptrAnchorX}
-  while(dx<-stepPx){if(canAct&&tryMove(-1))SFX.move();ptrAnchorX-=stepPx;dx=e.clientX-ptrAnchorX}
-  const dy=e.clientY-ptrStartY;                                    // vertical: up = rotate (never moves board-Y)
-  if(dy<0){rotAccum+=-dy;if(rotAccum>SWIPE_Y){rotAccum=0;if(canAct)tryRotate(1)}}else rotAccum=0;
-  movedDist=Math.max(movedDist,Math.abs(e.clientX-ptrStartX),Math.abs(dy));
+  let dx=e.clientX-prevX, dy=e.clientY-prevY; prevX=e.clientX;prevY=e.clientY;   // incremental deltas
+  hAccum+=dx;                                                            // horizontal: step by column
+  while(hAccum>=stepPx){if(canAct&&tryMove(1))SFX.move();hAccum-=stepPx}
+  while(hAccum<=-stepPx){if(canAct&&tryMove(-1))SFX.move();hAccum+=stepPx}
+  if(dy<0){upAccum+=-dy;if(upAccum>=SWIPE_Y){upAccum=0;if(canAct)tryRotate(1)}}  // vertical up: rotate (no compounding)
+  else upAccum=Math.max(0,upAccum+dy);                                    // dragging down decays the accumulator
+  movedDist+=Math.abs(dx)+Math.abs(dy);
 },{passive:true});
 
 function endPointer(e){
   if(!ptrDown||e.pointerId!==ptrId)return;
   ptrDown=false;
   const dur=performance.now()-downTime;
-  const isTap=dur<TAP_MS*0.9&&movedDist<Math.max(28,stepPx*0.6);   // a quick tap (not a drag)
-  if(isTap){
-    if(performance.now()-lastTap<TAP_MS&&state==='play'&&!paused&&piece)hardDrop(); // double tap -> slam
-    lastTap=performance.now();
-  }else lastTap=0;
+  const isTap=dur<TAP_MS*0.9&&movedDist<Math.max(24,stepPx*0.6);        // a quick tap (not a drag)
+  if(isTap){if(performance.now()-lastTap<TAP_MS&&state==='play'&&!paused&&piece)hardDrop();lastTap=performance.now()}
+  else lastTap=0;
 }
 window.addEventListener('pointerup',endPointer,{passive:true});
 window.addEventListener('pointercancel',()=>{ptrDown=false},{passive:true});
 canvas.addEventListener('contextmenu',e=>e.preventDefault());
 
-/* ---------------- camera fx ---------------- */
+/* ---------------- camera fx + framing ---------------- */
 let shakeAmp=0,fxPulse=0;function addShake(a){shakeAmp=Math.min(.6,Math.max(shakeAmp,a))}
 let parX=0,parY=0,tarPX=0,tarPY=0,swayAmp=.7;
 window.addEventListener('pointermove',e=>{tarPX=(e.clientX/innerWidth-.5)*2;tarPY=(e.clientY/innerHeight-.5)*2});
 
+/* distance chosen so the centered board never overlaps the side panels:
+   take the larger of (vertical fit) and (horizontal gutter from measured panel width). */
 function computeCamera(){
-  const f=THREE.MathUtils.degToRad(camera.fov)/2;
-  const hN=12.3/Math.tan(f),wN=(COLS/2+1.6)/(Math.tan(f)*camera.aspect);
-  camDist=Math.max(hN,wN)*1.05;camBaseY=1.7;
+  const tf=Math.tan(THREE.MathUtils.degToRad(camera.fov)/2);
+  const halfH=innerHeight/2, halfW=innerWidth/2;
+  let d=(12.4/tf)*1.03;                                            // vertical fit (incl. the ceiling), small margin
+  const pw=Math.max($('leftPanel').offsetWidth||0,$('rightPanel')?.offsetWidth||0)||0;
+  const gap=pw+26;                                                // panel width + edge offset + breathing room
+  let maxHalf=Math.max(halfW-gap,40);                             // board half-width in px allowed before hitting a panel
+  d=Math.max(d,(5.7/tf)*halfH/maxHalf);                           // zoom out more on narrow/portrait screens
+  camDist=d;camBaseY=1.6;
 }
 
 /* ---------------- main loop ---------------- */
